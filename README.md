@@ -35,6 +35,18 @@ In our manuscript, we demonstrate that INSPIRE is applicable to a range of biolo
 
 We provide tutorials and codes for reproducing the experiments of our paper at [this tutorial website](https://inspire-tutorial.readthedocs.io/en/latest/index.html#).
 
+## Development
+### Building locally with hatch
+First make sure that the right tools are installed:
+```bash
+pip install hatch
+pip install keyrings.alt
+```
+Then build with hatch:
+```
+hatch build
+```
+
 ## Reference
 
 Jia Zhao, Xiangyu Zhang, Gefei Wang, Yingxin Lin, Tianyu Liu, Rui B. Chang, Hongyu Zhao. INSPIRE: interpretable, flexible and spatially-aware integration of multiple spatial transcriptomics datasets from diverse sources. Preprint. 2024. [https://doi.org/10.1101/2024.09.23.614539](https://doi.org/10.1101/2024.09.23.614539).
