@@ -1,0 +1,71 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "inspire"
+dynamic = ["version"]
+
+dependencies = [
+    "pytorch",
+    "numpy",
+    "scanpy",
+    "scipy",
+    "louvain",
+    "umap-learn",
+    "numba",
+    "matplotlib",
+    "python-annoy",
+    "scikit-misc",
+]
+
+description = "INSPIRE"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Bio-Informatics"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/jiazhao97/INSPIRE"
+"Bug Tracker" = "https://github.com/jiazhao97/INSPIRE/issues"
+
+# [project.scripts]
+# inspire-mlflow = "inspire.mlflow.train:main"
+# inspire-grid-search= "inspire.mlflow.grid_search:run"
+
+[project.optional-dependencies]
+mlflow = [
+  "mlflow>=2.5.0",
+  "toml>=0.10.2"
+]
+
+[tool]
+
+[tool.hatch.version]
+path = "inspire/__about__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "inspire/*.py",
+  # "inspire/mlflow/*.py",
+]
+
+[tool.hatch.build.targets.wheel]
+include = [
+  "inspire/*.py",
+  # "inspire/mlflow/*.py",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
